@@ -7,15 +7,39 @@
   box-sizing: border-box;
  }
 
+:root {
+  --card-tittle-border-color: #746615;
+  --card-color-primary: #f7dd43;
+  --card-bg-color: #1d1c19;
+  --cor-1: #f7dd43;
+  --bg: url(./assets/bg-green.svg);  
+}
+
+body.blue {
+  --card-tittle-border-color: #338af3;
+  --card-color-primary: #338af3;
+  --bg: url(./assets/bg-green.svg);
+}
+
+body.green {
+  --card-tittle-border-color: #047c3f;
+  --card-color-primary: #047c3f;
+  --bg: url(./assets/bg-blue.svg);
+}
+
 ul {
   list-style: none;
  }
 
 body {
-  background-color: #121214;
-  background-image: url(./assets/bg.svg);
-  background-position-x: center;
-  background-position-y: 56.6%;
+  /* background-color: #121214;
+  background-image: var(--bg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+
+  background: #121214 var(--bg) no-repeat top center/cover;
+ 
  }
 
  body * {
@@ -25,7 +49,8 @@ body {
 
 #app {
   width: fit-content;
-  margin: 52px auto;
+  margin: auto;
+  padding-top: 52px;
  }
 
 header {
@@ -42,8 +67,8 @@ header {
 .card {
   padding: 23px 23px;
   text-align: center;
-  background: #1d1c19;
-  border-bottom: 2px solid #f7dd43;
+  background: var(--card-bg-color);
+  border-bottom: 2px solid var(--card-color-primary);
   border-radius: 6px;
   box-shadow: 1px 2px 14px 3px #0000004f;
  }
@@ -55,14 +80,14 @@ header {
   align-items: center;
 
   padding: 8px 16px;
-  border: 1px solid #746615;
+  border: 1px solid var(--card-tittle-border-color);
   border-radius: 6px;
   
   width: fit-content;
   margin-inline: auto;
   margin-bottom: 53px;
 
-  color: #f7dd43;
+  color: var(--cor-1);
  }
 
  .card h2 span {
@@ -88,7 +113,7 @@ header {
 
 .card ul li + li {
   padding-top: 24px;
-  border-top: 1px solid green;
+  border-top: 1px solid #4a4a4c89;
  }
 
 .card ul li strong {
@@ -99,3 +124,39 @@ header {
   color: #E1E1E6; 
  }
 
+ .card h2:hover,
+ .card ul li strong:hover,
+ .card ul li img:hover {
+  transform: scale(1.1);
+ }
+
+ .card h2,
+ .card ul li strong,
+ .card ul li img {
+  transition: transform 0.3s;
+ }
+
+ .card {
+  animation: appear .7s;
+  animation:  appear .2s forwards;
+ }
+
+ @keyframes appear {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+ }
+
+ @media (min-width: 700px) {
+ #cards {
+    max-width: 670px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+ }
