@@ -6,7 +6,7 @@
 
 <p align="center">
 11/2022 Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB. <br>
-<a align="center" href="https://viniciusluz99.github.io/nlw-copa/" target="_blank"> Quer dar uma olhada no projeto? </a> </p>
+<a align="center" href="https://viniciusluz99.github.io/Projeto-nlw-copa/" target="_blank"> Quer dar uma olhada no projeto? </a> </p>
 
  <br>
 
